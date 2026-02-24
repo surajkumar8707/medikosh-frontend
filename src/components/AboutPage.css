@@ -1,0 +1,391 @@
+/* Hero Header Styles */
+.hero-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  color: white;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+/* About Content Section */
+.about-content-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.about-image {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 100%;
+  height: auto;
+}
+
+.about-image:hover {
+  transform: scale(1.03);
+}
+
+.image-overlay-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(33, 150, 243, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.about-image-wrapper:hover .image-overlay-effect {
+  opacity: 1;
+}
+
+.about-text-content {
+  padding: 2rem;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 15px;
+  color: #2c3e50;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #2196F3, #4CAF50);
+  border-radius: 2px;
+}
+
+.features-list {
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+  background: rgba(33, 150, 243, 0.05);
+}
+
+.feature-icon {
+  background: linear-gradient(135deg, #2196F3, #4CAF50);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+/* Counter Section */
+.counter-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.counter-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.counter-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.counter-icon-wrapper {
+  display: inline-block;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.counter-icon {
+  animation: bounce 2s infinite;
+}
+
+.counter-value {
+  font-weight: 800;
+  background: linear-gradient(45deg, #fff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.counter-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Reviews Section */
+.reviews-section {
+  background: #f8f9fa;
+}
+
+.review-carousel {
+  position: relative;
+}
+
+.review-carousel .carousel-control-prev,
+.review-carousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background: #2196F3;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.review-carousel .carousel-control-prev:hover,
+.review-carousel .carousel-control-next:hover {
+  background: #0d8bf2;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.review-card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  background: white;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+.quote-icon {
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover .quote-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.review-comment {
+  line-height: 1.8;
+  position: relative;
+  padding-left: 20px;
+}
+
+.review-author {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 3px solid #2196F3;
+  padding: 2px;
+  transition: transform 0.3s ease;
+}
+
+.review-card:hover .review-avatar {
+  transform: scale(1.1);
+}
+
+.rating-stars {
+  font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .counter-card {
+    margin-bottom: 1rem;
+  }
+  
+  .counter-value {
+    font-size: 2.5rem;
+  }
+  
+  .review-card {
+    margin: 0 15px;
+  }
+  
+  .review-carousel .carousel-control-prev,
+  .review-carousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-header {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .counter-value {
+    font-size: 2rem;
+  }
+  
+  .review-card .card-body {
+    padding: 2rem !important;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+.counter-card,
+.review-card,
+.feature-item,
+.about-image,
+.carousel-control-prev,
+.carousel-control-next {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects for better user interaction */
+.feature-item:hover .feature-icon {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+/* Loading animation for counters */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter-value {
+  animation: countUp 0.5s ease-out;
+}
