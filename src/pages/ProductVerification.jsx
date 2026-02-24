@@ -364,7 +364,6 @@ const ProductVerification = () => {
 										<div key={item.id} className='col-12 col-sm-6 col-lg-3'>
 											<div
 												className='product-card'
-												onClick={() => openModal(item, index)}
 												style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
 											>
 												<div className='product-img-container'>
@@ -379,7 +378,7 @@ const ProductVerification = () => {
 																'https://via.placeholder.com/400x300?text=No+Image';
 														}}
 													/>
-													<div className='product-overlay'>
+													{/* <div className='product-overlay'>
 														<span
 															className='view-details-btn'
 															style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
@@ -387,7 +386,7 @@ const ProductVerification = () => {
 															<FaEye className='me-2' />
 															View Details
 														</span>
-													</div>
+													</div> */}
 													{/* Show image count if multiple images */}
 													{item.images.length > 1 && (
 														<div className='product-image-count'>
@@ -414,7 +413,7 @@ const ProductVerification = () => {
 													</h5>
 
 													{/* Show matching batch info */}
-													{searchTerm.trim() && (
+													{/* {searchTerm.trim() && (
 														<div className='mb-2 small'>
 															{displayBatches.length > 0 ? (
 																<span className='text-success'>
@@ -428,7 +427,7 @@ const ProductVerification = () => {
 																</span>
 															)}
 														</div>
-													)}
+													)} */}
 
 													<div className='d-flex justify-content-between align-items-center'>
 														<span
@@ -438,7 +437,13 @@ const ProductVerification = () => {
 															<FaCheckCircle className='me-1' />
 															{item.isVerified ? 'Verified' : 'Not Verified'}
 														</span>
-														<button
+														<Link
+															className='btn btn-outline-primary btn-sm verify-btn'
+															to={`/product/${item.id}`}
+														>
+															Details
+														</Link>
+														{/* <button
 															className='btn btn-outline-primary btn-sm verify-btn'
 															onClick={(e) => {
 																e.stopPropagation();
@@ -448,7 +453,7 @@ const ProductVerification = () => {
 														>
 															<FaEye className='me-1' />
 															Details
-														</button>
+														</button> */}
 													</div>
 												</div>
 											</div>

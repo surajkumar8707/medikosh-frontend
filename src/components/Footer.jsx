@@ -140,11 +140,6 @@ const Footer = () => {
 							<div className='col-6'>
 								<ul className='list-unstyled'>
 									{[
-										{
-											icon: <FaSignInAlt />,
-											text: 'Login',
-											link: 'https://medikosh-admin.daarukavaneresort.com/admin/login',
-										},
 										{ icon: <FaEnvelope />, text: 'Contact', link: '/contact' },
 										{ icon: <FaFileContract />, text: 'PrivacyPolicy', link: '/privacy-policy' },
 										{

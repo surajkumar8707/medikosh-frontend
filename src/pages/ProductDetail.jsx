@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import {
 	FaCheckCircle,
 	FaChevronLeft,
@@ -341,7 +341,7 @@ const ProductDetail = () => {
 												className='fw-bold mb-0'
 												style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
 											>
-												Price
+												MRP
 											</h6>
 										</div>
 										<p
@@ -389,7 +389,7 @@ const ProductDetail = () => {
 							</div> */}
 
 							{/* Product Meta Information */}
-							<div className='row g-3 mb-4'>
+							{/* <div className='row g-3 mb-4'>
 								<div className='col-6'>
 									<div className='p-3 bg-light'>
 										<small className='text-muted d-block mb-1'>Product ID</small>
@@ -402,7 +402,7 @@ const ProductDetail = () => {
 										<strong>{formatDate(product.updated_at)}</strong>
 									</div>
 								</div>
-							</div>
+							</div> */}
 
 							{/* Batches Section - Modified to show only filtered batches */}
 							<div className='batches-section mb-4'>
@@ -494,6 +494,9 @@ const ProductDetail = () => {
 									This product is verified and authenticated by Medikosh
 								</p>
 							</div>
+							<Link className='btn btn-success text-center verify-btn mt-4' to={`/Products`}>
+								View Details
+							</Link>
 						</div>
 					</div>
 				</div>

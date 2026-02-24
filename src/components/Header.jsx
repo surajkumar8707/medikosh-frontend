@@ -385,7 +385,7 @@ const ResponsiveNavbar = () => {
 					{/* Brand/Logo */}
 					<a
 						className='navbar-brand fw-bold fs-3 logo-animate d-flex align-items-center'
-						href='#'
+						href='/'
 						style={{ color: '#2E3A3A' }}
 					>
 						<img src='/header.png' alt='Logo' className='me-2' style={{ height: '60px', width: 'auto' }} />
